@@ -7,13 +7,13 @@ metadata:
     argocd.argoproj.io/secret-type: cluster
 type: Opaque
 stringData:
-  name: 
+  name: target-k8s
   server: https://localhost:49999
   config: |
     {
       "bearerToken": "<authentication token>",
       "tlsClientConfig": {
         "insecure": false,
-        "caData": "<base64 encoded certificate>"
+        "caData": "/Users/mubahsirusman/.minikube/profiles/target-k8s/client.crt"
       }
     }
