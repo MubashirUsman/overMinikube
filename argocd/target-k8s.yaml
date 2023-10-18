@@ -1,0 +1,19 @@
+# /Users/mubahsirusman/.minikube/ca.crt
+apiVersion: v1
+kind: Secret
+metadata:
+  name: target-k8s-secret
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+type: Opaque
+stringData:
+  name: 
+  server: https://localhost:49999
+  config: |
+    {
+      "bearerToken": "<authentication token>",
+      "tlsClientConfig": {
+        "insecure": false,
+        "caData": "<base64 encoded certificate>"
+      }
+    }
